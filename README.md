@@ -30,5 +30,6 @@ cd your-repo
 ```
 ---
 
-## Start postgres and redis with Docker
+### 2️⃣ Start postgres and redis with Docker
+```bash
 docker-compose up --build
