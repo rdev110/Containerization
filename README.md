@@ -20,3 +20,15 @@ A minimal **full-stack boilerplate** with:
 
 ---
 
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
+---
+
+## Start postgres and redis with Docker
+docker-compose up --build
