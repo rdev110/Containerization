@@ -28,8 +28,11 @@ A minimal **full-stack boilerplate** with:
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 ```
+
 ---
 
 ### 2️⃣ Start postgres and redis with Docker
+
 ```bash
 docker-compose up --build
+```
