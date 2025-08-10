@@ -2,7 +2,7 @@
 
 A minimal **full-stack boilerplate** with:
 
-- **React** frontend (client)
+- **React.js** frontend (client)
 - **Node.js / Express** backend (server)
 - **PostgreSQL** database
 - **Redis** cache
