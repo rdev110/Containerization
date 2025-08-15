@@ -1,6 +1,6 @@
-import express from "express";
-import pkg from "pg";
-import { createClient } from "redis";
+const express = require("express");
+const pkg = require("pg");
+const { createClient } = require("redis");
 
 const { Pool } = pkg;
 
