@@ -1,6 +1,7 @@
 const express = require("express");
 const pkg = require("pg");
 const { createClient } = require("redis");
+require("dotenv").config();
 
 const { Pool } = pkg;
 
