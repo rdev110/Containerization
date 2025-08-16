@@ -36,3 +36,48 @@ cd your-repo
 ```bash
 docker-compose up --build
 ```
+
+### 3️⃣ Setup backend (Node.js + Express)
+```bash
+cd server
+npm install
+npm start
+```
+### 4️⃣ Setup frontend (React)
+``` bash
+cd client
+npm install
+npm start
+```
+
+### 🔑 Environment Variables
+```bash
+Create a .env file inside the server/ folder with the following:
+POSTGRES_HOST=localhost
+POSTGRES_USER=user
+POSTGRES_PASSWORD=password
+POSTGRES_DB=mydatabase
+POSTGRES_PORT=5432
+
+REDIS_HOST=localhost
+REDIS_PORT=6379
+```
+
+### 🌐 API Endpoints
+GET / → Returns backend status, Postgres time, and Redis value
+
+GET /set-redis → Sets a sample key in Redis
+
+### 🧪 Testing
+Visit backend: http://localhost:5000
+
+Visit frontend: http://localhost:3000
+
+Try setting Redis: http://localhost:5000/set-redis
+
+
+
+
+
+
+
