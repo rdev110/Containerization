@@ -65,10 +65,12 @@ REDIS_PORT=6379
 
 ### 🌐 API Endpoints
 GET / → Returns backend status, Postgres time, and Redis value
+
 GET /set-redis → Sets a sample key in Redis
 
 ### 🧪 Testing
 Visit backend: http://localhost:5000
+
 Visit frontend: http://localhost:3000
 
 
