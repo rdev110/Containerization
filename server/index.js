@@ -2,10 +2,12 @@ const express = require("express");
 const pkg = require("pg");
 const { createClient } = require("redis");
 require("dotenv").config();
+const cors = require("cors");
 
 const { Pool } = pkg;
 
 const app = express();
+app.use(cors());
 const port = 5000;
 
 // PostgreSQL setup
@@ -26,7 +28,7 @@ const redisClient = createClient({
 });
 redisClient.connect().catch(console.error);
 
-app.get("/", async (req, res) => {
+app.get("/api", async (req, res) => {
   try {
     const pgResult = await pgPool.query("SELECT NOW()");
     const redisValue = await redisClient.get("hello");
@@ -42,7 +44,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.get("/set-redis", async (req, res) => {
+app.get("/api/set-redis", async (req, res) => {
   await redisClient.set("hello", "world");
   res.send("Redis value set!");
 });
