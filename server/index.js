@@ -28,6 +28,9 @@ const redisClient = createClient({
 });
 redisClient.connect().catch(console.error);
 
+// --- API ROUTES ---
+
+// Check Postgres + Redis together
 app.get("/api", async (req, res) => {
   try {
     const pgResult = await pgPool.query("SELECT NOW()");
@@ -44,9 +47,16 @@ app.get("/api", async (req, res) => {
   }
 });
 
+// Set a Redis value
 app.get("/api/set-redis", async (req, res) => {
   await redisClient.set("hello", "world");
-  res.send("Redis value set!");
+  res.send("✅ Redis value set!");
+});
+
+// Get the Redis value
+app.get("/api/get-redis", async (req, res) => {
+  const value = await redisClient.get("hello");
+  res.send(`✅ Redis value: ${value || "not set yet"}`);
 });
 
 app.listen(port, () => {
